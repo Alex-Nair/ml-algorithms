@@ -1,0 +1,3 @@
+The purpose of this project is both a place where I can experiment and create ML algorithms for my own studies, as well as create a repository of various ML algorithms that anyone may use or adapt for their own uses. I'll also be occasionally taking a model and using it in one of my projects.
+
+Each model will be a Jupyter Notebook file and will be made in PyTorch (if I implement it into an actual project, I'll switch to using Tensorflow there). Once each model is complete, I'll also add a quick readme file inside of the corresponding folder detailing how I made it, what datasets I used, how I obtained the final data, and the structure of the model.
