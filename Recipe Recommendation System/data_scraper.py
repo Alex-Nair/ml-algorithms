@@ -51,11 +51,26 @@ with sync_playwright() as p:
                 "ingredients": ingredients,
                 "steps": steps
             }
+            
+            # A list of strings that should be replaced in order to comply with .25.
+            replacementStrings = {
+                "½": ".5",
+                "¼": ".25",
+                "¾": ".75",
+                "–": "-"
+            }
+
+            for tag in recipe.keys(): # Dataset cleaning - Replace common fractions with decimals.
+                for replacementString in replacementStrings.keys():
+                    recipe[tag] = recipe[tag].replace(replacementString, replacementStrings[replacementString])
 
             try:
                 with open("data.txt", "a") as file:
+                    stringToAdd = ""
                     for tag in recipe.keys():
-                        file.write(recipe[tag] + "\n")
+                        stringToAdd += recipe[tag] + "\n"
+                    
+                    file.write(stringToAdd)
             
             except Exception as e:
                 leftovers.append(recipe) # Error encountered with this recipe. Save it to a new list we can output at the end.
