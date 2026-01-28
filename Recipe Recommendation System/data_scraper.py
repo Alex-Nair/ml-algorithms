@@ -52,7 +52,7 @@ with sync_playwright() as p:
                 "steps": steps
             }
             
-            # A list of strings that should be replaced in order to comply with .25.
+            # A list of strings that should be replaced in order to comply with basic ASCII encoding.
             replacementStrings = {
                 "½": ".5",
                 "¼": ".25",
@@ -74,8 +74,9 @@ with sync_playwright() as p:
             
             except Exception as e:
                 leftovers.append(recipe) # Error encountered with this recipe. Save it to a new list we can output at the end.
-            
-    for header in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r" "s", "w", "x", "y", "z", "0-9"]:
+    
+    #["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r" "s", "w", "x", "y", "z", "0-9"]
+    for header in ["m", "n", "o", "p", "q", "r" "s", "w", "x", "y", "z", "0-9"]:
         pageNumber = 1
         isStillValid = True
 
