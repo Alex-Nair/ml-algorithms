@@ -75,8 +75,7 @@ with sync_playwright() as p:
             except Exception as e:
                 leftovers.append(recipe) # Error encountered with this recipe. Save it to a new list we can output at the end.
     
-    #["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r" "s", "w", "x", "y", "z", "0-9"]
-    for header in ["m", "n", "o", "p", "q", "r" "s", "w", "x", "y", "z", "0-9"]:
+    for header in ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r" "s", "w", "x", "y", "z", "0-9"]:
         pageNumber = 1
         isStillValid = True
 
